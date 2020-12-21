@@ -117,24 +117,24 @@ func main() {
     Pull: foo,
   },
 
-  // adding the adapter
-  env.ApplyAdapter(adapters)
+  // adding the adapters
+  env.ApplyAdapter(adapter)
 
   // secrets returned from a adapter will overwrite any env vars declared from the .env file
-	err := env.Load(".env")
-	if err != nil {
-		log.Fatal(err)
-	}
+  err := env.Load(".env")
+  if err != nil {
+    log.Fatal(err)
+  }
 
-	fmt.Println(os.Getenv("MESSAGE"))
+  fmt.Println(os.Getenv("MESSAGE"))
 }
 
 func foo() (*env.Map, error) {
-	e := env.NewMap()
+  e := env.NewMap()
 
-	e.Set("MESSAGE", "FROM SECRET STORE")
+  e.Set("MESSAGE", "FROM SECRET STORE")
 
-	return e, nil
+  return e, nil
 }
 ```
 
