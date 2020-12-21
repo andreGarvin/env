@@ -10,6 +10,7 @@ A golang port of the Ruby dotenv project (which loads env vars from a .env file)
   - [LoadSecrets](#loadsecrets)
   - [MustLoadSecrets](#mustloadsecrets)
   - [NewMap](#newmap)
+- [Contributing](#contributing)
 
 ## Installation
 
@@ -38,7 +39,7 @@ Then in your Go app you can write the following code
 package main
 
 import (
-	"log"
+  "log"
   "github.com/andreGarvin/env"
 )
 
