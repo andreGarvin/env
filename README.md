@@ -44,9 +44,9 @@ import (
 
 func main() {
   err := env.Load(".env")
-	if err != nil {
-		log.Fatal(err)
-	}
+  if err != nil {
+    log.Fatal(err)
+  }
 
   fmt.Println(os.Getenv("APP_NAME"))
   fmt.Println(os.Getenv("SECRET"))
