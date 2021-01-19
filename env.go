@@ -247,9 +247,11 @@ func Parse(content string) *Map {
 
 	lines := strings.Split(content, "\n")
 	for _, line := range lines {
-		key, val := parseLine(line)
+		line = strings.Trim(line, " ")
 
-		if !strings.HasPrefix(key, "#") && key != "" {
+		if !strings.HasPrefix(line, "#") && line != "" {
+			key, val := parseLine(line)
+
 			emap.Set(key, val)
 		}
 	}
@@ -258,9 +260,7 @@ func Parse(content string) *Map {
 }
 
 func parseLine(line string) (string, string) {
-	trimed := strings.Trim(line, " ")
-
-	splitLine := strings.Split(trimed, "=")
+	splitLine := strings.Split(line, "=")
 
 	return splitLine[0], splitLine[1]
 }
