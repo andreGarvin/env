@@ -260,7 +260,7 @@ func Parse(content string) *Map {
 }
 
 func parseLine(line string) (string, string) {
-	splitLine := strings.Split(line, "=")
+	splitLine := strings.SplitN(line, "=", 2)
 
 	return splitLine[0], splitLine[1]
 }
